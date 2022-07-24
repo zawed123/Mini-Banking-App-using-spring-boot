@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<title>Create Account</title>
+</head>
+
+<script type="text/javascript">
+</script>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col m6 offset-m3">
+				<div class="card">
+					<div class="card-content">
+						<h3 class="center-align">Register Here !!</h3>
+						<h5 id="msg" class="center-align"></h5>
+						<div class="form center-align">
+							<form onsubmit="return validateForm()">
+							<input type="text" class="form-control" id="userName" placeholder="Enter the name"
+								name="userName"> <input type="text" class="form-control" id="bal"
+								placeholder="Enter amount" name="bal"> <label for="floatingPassword"><input
+									type="password" class="form-control" id="pass" placeholder="Enter Password"
+									name="pass">
+								<input type="submit" value="Submit" id="submit" class="btn">
+								</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$("#submit").click(function () {
+				var userName = $("#userName").val();
+				var bal = $("#bal").val();
+				var pass = $("#pass").val();
+				console.log(userName);
+				console.log(bal);
+				console.log(pass);
+				var SendInfo = {
+
+					"name": userName,
+					"balance": bal,
+					"password": pass,
+					"transactions": []
+
+				}
+				
+				$.ajax({
+					url: 'http://localhost:8080/api/v1/banking/log/addAccount',
+					method: 'POST',
+					data: JSON.stringify(SendInfo),
+					contentType: "application/json; charset=utf-8",
+					traditional: true,
+					success: function (data) {
+						console.log(data);
+						window.location.replace("login.html");
+					}
+				});
+
+			});
+		});
+	</script>
+</body>
+
+</html>
