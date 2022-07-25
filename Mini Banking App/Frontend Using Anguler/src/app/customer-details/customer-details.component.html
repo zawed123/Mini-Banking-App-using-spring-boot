@@ -1,0 +1,19 @@
+
+<table class="card-table table">
+
+    <thead>
+        <tr>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Balance</th>
+            <th scope="col">Transactio Details</th>
+        </tr>
+    </thead>
+
+     <tbody *ngFor="let item of customers">
+    <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.balance}}</td> 
+        <td><a href="/passbook" class="btn btn-success">Transaction</a></td>
+    </tr>
+    </tbody>  
+</table>

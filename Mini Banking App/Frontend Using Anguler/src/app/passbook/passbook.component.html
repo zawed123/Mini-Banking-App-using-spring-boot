@@ -1,0 +1,20 @@
+
+
+<table class="card-table table">
+
+    <thead>
+        <tr>
+            <th scope="col">Amount</th>
+            <th scope="col">Type</th>
+            <th scope="col">DateTime</th>
+        </tr>
+    </thead>
+
+    <tbody *ngFor="let item of transactions">
+    <tr>
+        <td>{{item.amount}}</td>
+        <td>{{item.type}}</td>
+        <td>{{item.dateTime}}</td>
+    </tr>
+    </tbody>
+</table>

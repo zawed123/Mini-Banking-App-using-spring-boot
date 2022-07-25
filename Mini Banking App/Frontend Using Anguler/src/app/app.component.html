@@ -1,0 +1,16 @@
+
+<html>
+  <head>
+  <meta charset="ISO-8859-1">
+  <title>Insert title here</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <div class="border" style="background-color: rgb(36, 96, 185); height: 60px;">
+    <h4>Banking App</h4>
+    <a routerLink="home" *ngIf="!loggedin" class="btn btn-primary" style="margin-left: 200px; margin-top: -40px;">Home</a>
+    <a routerLink="registration" *ngIf="!loggedin" class="btn btn-primary" style="margin-left: 30px; margin-top: -40px;">Registration</a>
+    <a routerLink="login" *ngIf="!loggedin" class="btn btn-primary" style="margin-left: 30px; margin-top: -40px;">Login</a>
+    
+  </div>
+
+      <router-outlet></router-outlet>

@@ -1,0 +1,7 @@
+<div class="border" style="width: 50%;"> 
+    <h1>{{title}}</h1>
+    <input type="text" class="form-control" style="width: 40%;" [(ngModel)]="amount" placeholder="Enter Amount"><br><br>
+    <input type="checkbox" name="myCheckbox" id="checkbox" value="Deposit" [(ngModel)]="deposit"/> Deposite <br />
+      <input type="checkbox" name="myCheckbox" id="checkbox" value="Withdraw" [(ngModel)]=withdraw/> Withdraw<br>
+      <input type="button" value="Update" class="btn btn-success" (click)="doTransaction()">
+</div>
